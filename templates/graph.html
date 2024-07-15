@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Welcome To Home Page</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body >
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('registration') }}">Registration</a>
+        <a href="{{ url_for('parking_status') }}">Parking Status</a>
+        <a href="{{ url_for('aboutus') }}">About Us</a>
+        <a href="{{ url_for('vehicleanalysis') }}">Analysis</a>
+
+        <div class="theme-toggle">
+            <img src="{{ url_for('static', filename='images/light-icon.png') }}" alt="Toggle Theme" id="theme-icon">
+        </div>
+        <form class="search-bar">
+            <input type="text" placeholder="Search..." id="search-input">
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+    <h1><center>Generated Graph for Vehicle Analysis</center></h1>
+    <div id="graphimage">
+        <img id="graphImage" alt="Graph for the selected date" style="max-width: 100%; display: none;">
+        <p id="errorMessage" style="display: none;">Graph is not available for the selected date.</p>
+    </div>
+    <script>
+        // Extract the date from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const date = urlParams.get('date');
+
+        if (date) {
+            // Construct the image URL based on the date
+            const imageUrl = `graphs/${date}.png`;
+            const graphImage = document.getElementById('graphImage');
+            const errorMessage = document.getElementById('errorMessage');
+
+            graphImage.src = imageUrl;
+            graphImage.alt = `Graph for ${date}`;
+            graphImage.style.display = 'block';
+
+            // Add error handling for the image loading
+            graphImage.onerror = function() {
+                graphImage.style.display = 'none';
+                errorMessage.style.display = 'block';
+            };
+        } else {
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

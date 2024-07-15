@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Number Plates</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('registration') }}">Registration</a>
+        <a href="{{ url_for('parking_status') }}">Parking Status</a>
+        <a href="{{ url_for('aboutus') }}">About Us</a>
+        <a href="{{ url_for('vehicleanalysis') }}">Analysis</a>
+    </nav>
+    <div class="container">
+        <h1>Unique Number Plates</h1>
+        <table border="1">
+            <tr>
+                <th>Number Plate</th>
+                <th>Match</th>
+            </tr>
+            {% for plate in plates %}
+            <tr>
+                <td>{{ plate }}</td>
+                <td>{{ data[data['NumberPlate'] == plate]['Match'].values[0] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

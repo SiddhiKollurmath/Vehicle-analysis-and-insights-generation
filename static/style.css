@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);    
+}
+
+:root {
+    --bg-color: #efecb5;
+    --text-color: #444;
+    --nav-bg-color: #ffd500;
+    --nav-text-color: #444;
+    --container-bg-color: #d5c67b;
+    --container-text-color: #000;
+}
+
+body.dark-mode {
+    --bg-color: #091d6e;
+    --text-color: #f4f4f4;
+    --nav-bg-color: #08164d;
+    --nav-text-color: #f4f4f4;
+    --container-bg-color: #899ff7;
+    --container-text-color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg-color);
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--nav-text-color);
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.navbar .theme-toggle {
+    cursor: pointer;
+}
+
+.navbar .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .search-bar input {
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.navbar .search-bar button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--nav-text-color);
+    color: var(--nav-bg-color);
+    cursor: pointer;
+}
+
+.title {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.title h1 {
+    color: var(--text-color);
+}
+#submit{
+    width:100px;
+}
+
+.notfound-main, .found-main {
+    text-align: center;    
+}
+.notfound-main button#register {
+    background-color: #049440;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.notfound-main button#cancel {
+    background-color: #bb0303;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}  
+
+.notfound-main button#register:hover {
+    background-color: #1f2120;
+}
+
+.notfound-main button#cancel:hover {
+    background-color: #201f1f;
+}
+
+.found-main button#p-slot {
+    background-color: #a7eeb4;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width:150px;
+}
+
+.found-main button#back {
+    background-color: #bb0303;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width:150px;
+}  
+
+.found-main button#p-slot:hover {
+    background-color: #6edf83;
+}
+
+.found-main button#back:hover {
+    background-color: #e78787;
+}
+
+/* registration form */
+.container-form {
+    background-color: var(--container-bg-color);
+    color: var(--container-text-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin:60px 100px 100px 370px;
+    width: 500px;
+    height: 500px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* vehicle analysis */
+.vehicle-form {
+    background-color: var(--container-bg-color);
+    color: var(--container-text-color);
+    width: 180px;
+    height: 100px;
+    margin: 70px 100px 500px 440px;
+    padding: 100px;
+    border-radius: 15vh;
+    text-align: center;
+}
+
+/* graph.html */
+#graphimage {
+    background-color: var(--container-bg-color);
+    color: var(--container-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 400px;
+}
+
+/* index */
+.scanner {
+    background-color: var(--container-bg-color);
+    color: var(--container-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 250px;
+    width: 500px;
+    border-radius: 10vh;
+    padding: 20px;
+    margin: 20px 100px 150px 370px;
+}
+
+.content {
+    background-color: var(--container-bg-color);
+    color: var(--container-text-color);
+    width: 500px;
+    height: 250px;
+    margin: 70px 100px 500px 300px;
+    padding: 100px;
+    border-radius: 15vh;
+    text-align: center;
+}

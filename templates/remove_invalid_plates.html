@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Invalid Number Plates Removed</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('registration') }}">Registration</a>
+        <a href="{{ url_for('parking_status') }}">Parking Status</a>
+        <a href="{{ url_for('aboutus') }}">About Us</a>
+        <a href="{{ url_for('vehicleanalysis') }}">Analysis</a>
+    </nav>
+    <div class="content">
+        <h1>Invalid Number Plates Removed</h1>
+        <p>Invalid number plates have been successfully removed from the database.</p>
+        <a href="{{ url_for('results') }}">View Unique Number Plates and Matches</a>
+    </div>
+</body>
+</html>

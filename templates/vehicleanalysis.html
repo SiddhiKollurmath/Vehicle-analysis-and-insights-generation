@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Home Page</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('registration') }}">Registration</a>
+        <a href="{{ url_for('parking_status') }}">Parking Status</a>
+        <a href="{{ url_for('aboutus') }}">About Us</a>
+        <a href="{{ url_for('vehicleanalysis') }}">Analysis</a>
+
+        <div class="theme-toggle">
+            <img src="{{ url_for('static', filename='images/light-icon.png') }}" alt="Toggle Theme" id="theme-icon">
+        </div>
+        <form class="search-bar">
+            <input type="text" placeholder="Search..." id="search-input">
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+    <div class="title">
+        <h1>Vehicle Parking Analysis</h1>    
+        <div class="vehicle-form">
+            <form action="{{ url_for('graph') }}" method="get">            
+                <label for="date">Date:&nbsp;&nbsp;<input type="date" id="date" name="date" required></label><br><br>
+                <input type="submit" value="Generate Graph">
+            </form>
+        </div>
+    </div>  
+</body>
+</html>

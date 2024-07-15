@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Found</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+ <body>
+
+    <div>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('registration') }}">Registration</a>
+            <a href="{{ url_for('parking_status') }}">Parking Status</a>
+            <a href="{{ url_for('aboutus') }}">About Us</a>
+            <a href="{{ url_for('vehicleanalysis') }}">Analysis</a>
+            <div class="theme-toggle">
+                <img src="/static/images/light-icon.png" alt="Toggle Theme" id="theme-icon">
+            </div>
+            <form class="search-bar">
+                <input type="text" placeholder="Search..." id="search-input">
+                <button type="submit">Search</button>
+            </form>
+        </nav>
+    </div>
+
+    <div class="found-main">
+        <h1>Data Found</h1>
+        <h2>Please find parking slot</h2>
+                 
+        <a href="{{ url_for('parking_status') }}">
+            <button id="p-slot">Check Parking Slot</button>
+        </a>
+        <br><br><br><br>
+        <a href="{{ url_for('index') }}">
+            <button id="back">BACK</button>
+        </a>
+    </div>
+ </body>
+</html>

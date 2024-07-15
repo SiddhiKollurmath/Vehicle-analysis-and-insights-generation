@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Data Not Found</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+ <body>
+
+    <div>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('registration') }}">Registration</a>
+            <a href="{{ url_for('parking_status') }}">Parking Status</a>
+            <a href="{{ url_for('aboutus') }}">About Us</a>
+            <a href="{{ url_for('vehicleanalysis') }}">Analysis</a>
+            <div class="theme-toggle">
+                <img src="light-icon.png" alt="Toggle Theme" id="theme-icon">
+            </div>
+            <form class="search-bar">
+                <input type="text" placeholder="Search..." id="search-input">
+                <button type="submit">Search</button>
+            </form>
+        </nav>
+    </div>
+
+    <div class="notfound-main">
+        <h1>ERROR!!</h1>
+        <h2>The Vehicle is not Registered!!</h2>
+
+        <h2>Please complete the registration first.</h2>       
+          
+        <a href="">
+            <button id="register">REGISTER</button>
+        </a>
+
+           &nbsp;&nbsp;&nbsp;&nbsp; 
+
+        <a href="index.html">
+            <button id="cancel">CANCEL</button>
+        </a>
+    </div>
+ </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Home Page</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('registration') }}">Registration</a>
+        <a href="{{ url_for('parking_status') }}">Parking Status</a>
+        <a href="{{ url_for('aboutus') }}">About Us</a>
+        <a href="{{ url_for('vehicleanalysis') }}">Analysis</a>
+        <div class="theme-toggle">
+            <img src="{{ url_for('static', filename='images/light-icon.png') }}" alt="Toggle Theme" id="theme-icon">
+        </div> 
+        <form class="search-bar">
+            <input type="text" placeholder="Search..." id="search-input">
+            <button type="submit">Search</button>
+        </form>       
+    </nav>
+    <div class="title">
+        <h1>Welcome To Vehicle Registration</h1>
+    </div>
+    <div class="container-form">
+        <h2>Registration Form</h2>
+        <form action="{{ url_for('registration') }}" method="POST"> 
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="number">Vehicle Number:</label>
+                <input type="text" id="number" name="number" pattern="[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}" required>
+                <small>Format: AB01AA0000</small>
+            </div>          
+            <div class="form-group">
+                <label for="VehicleType">Vehicle Type:</label>
+                <select id="VehicleType" name="VehicleType" required>
+                    <option value="">Select the vehicle type</option>
+                    <option value="Two Wheeler">Two Wheeler</option>
+                    <option value="Four Wheeler">Four Wheeler</option>     
+                </select>
+            </div>
+            <div class="form-group">
+                <label>User</label>
+                <label for="Faculty"><input type="radio" id="Faculty" name="user" value="Faculty" required>Faculty</label>
+                <label for="Student"><input type="radio" id="Student" name="user" value="Student">Student</label>
+                <label for="Other"><input type="radio" id="other" name="user" value="other"> Other</label>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
